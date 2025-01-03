@@ -1,0 +1,22 @@
+retrieve_jobs_task:
+  description: >
+    Conduct a thorough search for {difficulty_level} level {topic} {type} job postings in {preferred_cities}, {preferred_province}, {preferred_country} that match the preferences for the {term}. 
+    Ensure that the job opportunities meet the outlined criteria and are relevant to the specified term.
+  expected_output: >
+    A list of 5 {difficulty_level} level {topic} {type} job postings, including essential information such as job title, company name, job description, location, requirements, application deadline, and application link.
+  agent: retrieve_jobs
+
+website_scraper_task:
+  description: >
+    Use web scraping techniques to extract detailed information on {difficulty_level} level {topic} {type} job postings from online platforms in {preferred_cities}, {preferred_province}, {preferred_country}.
+  expected_output: >
+    A comprehensive dataset of job postings with key details, including company name, job title, description, location, responsibilities, requirements, salary (if available), and application deadline.
+  agent: website_scraper
+
+file_writer_task:
+  description: >
+    Format and save the compiled job listings to a structured file for user reference.
+  expected_output: >
+    A Markdown file named jobs/{date}_job_listings.md, containing 5 detailed job postings with information on the hiring company, job responsibilities, requirements, location, salary, application deadline, and application link. 
+    Ensure clarity and logical structure. Formatted as markdown without '```'
+  agent: file_writer
