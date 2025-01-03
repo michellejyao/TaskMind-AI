@@ -22,7 +22,7 @@ def run():
         'difficulty_level': 'junior or intermediate',
         'preferred_country': 'Canada',
         'preferred_province': 'Ontario',
-        'preferred_cities': 'Toronto or Markham or Waterloo or Oakville or Hamilton or Ottawa',
+        'preferred_cities': 'Toronto',
         'date': datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     }
     AiJobHunter().crew().kickoff(inputs=inputs)
